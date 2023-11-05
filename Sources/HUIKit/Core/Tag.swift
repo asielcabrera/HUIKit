@@ -28,4 +28,11 @@ open class Tag {
         }
         return self
     }
+    
+    public func attributeWithoutRemove(_ key: String, _ value: String?, _ adding: Bool = true) -> Self {
+        if let value = value, adding {
+            node.addAttribute(Attribute(key: key, value: value))
+        }
+        return self
+    }
 }
