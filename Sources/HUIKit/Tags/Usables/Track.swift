@@ -13,7 +13,7 @@
 open class Track: Tag {
     
     public init(src: String) {
-        let node = Node(type: .empty, name: "track", attributes: [Attribute(key: "src", value: src)])
+        let node = Node(type: .empty, name: "track", attributes: [Attribute(name: "src", value: src)])
         super.init(node)
     }
 }

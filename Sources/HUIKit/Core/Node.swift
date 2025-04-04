@@ -23,9 +23,9 @@ public struct Node {
     public let type: NodeType
     public let name: String?
     public let contents: String?
-    public private(set) var attributes: [Attribute]
+    private(set) var attributes: [Attribute]
 
-    public init(type: NodeType = .standard,
+    init(type: NodeType = .standard,
          name: String? = nil,
          contents: String? = nil,
          attributes: [Attribute] = []
@@ -40,17 +40,17 @@ public struct Node {
 public extension Node {
     
     /// add or replace an attribute with a given key to the node
-    mutating func upsert(_ attribute: Attribute) {
+    internal mutating func upsert(_ attribute: Attribute) {
         delete(attribute)
         attributes.append(attribute)
     }
 
     /// deletes a attribute with a given key from the node
-    mutating func delete(_ attribute: Attribute) {
-        attributes = attributes.filter { $0.key != attribute.key }
+    internal mutating func delete(_ attribute: Attribute) {
+        attributes = attributes.filter { $0.name != attribute.name }
     }
     
-    mutating func addAttribute(_ attribute: Attribute) {
+    internal mutating func addAttribute(_ attribute: Attribute) {
         attributes.append(attribute)
     }
 }

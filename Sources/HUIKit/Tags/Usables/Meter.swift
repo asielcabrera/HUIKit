@@ -15,7 +15,7 @@
 open class Meter: Tag {
 
     public init(value: Int, _ contents: String) {
-        let node = Node(type: .standard, name: "meter", contents: contents, attributes: [Attribute(key: "value", value: String(value))])
+        let node = Node(type: .standard, name: "meter", contents: contents, attributes: [Attribute(name: "value", value: String(value))])
         super.init(node)
     }
 }

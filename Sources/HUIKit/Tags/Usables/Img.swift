@@ -22,8 +22,8 @@ open class Img: Tag {
 
     public init(src: String, alt: String) {
         let node = Node(type: .empty, name: "img", attributes: [
-            Attribute(key: "src", value: src),
-            Attribute(key: "alt", value: src),
+            Attribute(name: "src", value: src),
+            Attribute(name: "alt", value: src),
         ])
         super.init(node)
     }

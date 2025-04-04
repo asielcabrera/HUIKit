@@ -14,7 +14,7 @@ open class Link: Tag {
 
     public init(rel: Rel) {
         let node = Node(type: .empty, name: "link", attributes: [
-            Attribute(key: "rel", value: rel.rawValue),
+            Attribute(name: "rel", value: rel.rawValue),
         ])
         super.init(node)
     }

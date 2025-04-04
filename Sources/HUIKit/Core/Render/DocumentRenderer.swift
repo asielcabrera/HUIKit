@@ -69,9 +69,9 @@ public struct DocumentRenderer {
     private func renderAttributes(_ attributes: [Attribute]) -> String {
         return attributes.reduce([]) { res, next in
             if let value = next.value {
-                return res + [next.key + #"=""# + value + #"""#]
+                return res + [next.name + #"=""# + value + #"""#]
             }
-            return res + [next.key]
+            return res + [next.name]
         }.joined(separator: " ")
     }
 }

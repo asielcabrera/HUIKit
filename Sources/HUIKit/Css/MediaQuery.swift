@@ -6,7 +6,7 @@
 //
 
 /// represents a CSS media query
-public struct MediaQuery {
+public struct MediaQuery : Sendable{
     
     /// device orientation
     public enum Orientation: String {

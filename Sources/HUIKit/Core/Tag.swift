@@ -17,21 +17,21 @@ open class Tag {
    
     public func attribute(_ key: String, _ value: String?, _ condition: Bool = true) -> Self {
         if let value = value, condition {
-            node.upsert(Attribute(key: key, value: value))
+            node.upsert(Attribute(name: key, value: value))
         }
         return self
     }
     
     public func flagAttribute(_ key: String, _ value: String? = nil, _ condition: Bool = true) -> Self {
         if condition {
-            node.upsert(Attribute(key: key, value: value))
+            node.upsert(Attribute(name: key, value: value ?? ""))
         }
         return self
     }
     
     public func attributeWithoutRemove(_ key: String, _ value: String?, _ adding: Bool = true) -> Self {
         if let value = value, adding {
-            node.addAttribute(Attribute(key: key, value: value))
+            node.addAttribute(Attribute(name: key, value: value))
         }
         return self
     }

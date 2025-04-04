@@ -72,7 +72,7 @@ public extension Input {
     /// Specifies that an <input> element should be pre-selected when the page loads (for type="checkbox" or type="radio")
     func checked(_ value: Bool = true) -> Self {
         guard value else {
-            node.delete(Attribute(key: "checked"))
+            node.delete(Attribute(name: "checked", value: ""))
             return self
         }
         return flagAttribute("checked")
