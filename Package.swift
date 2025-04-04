@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "HUIKit",
-    platforms: [.macOS(.v10_15)],
+    platforms: [.macOS(.v13)],
     products: [
         .library(
             name: "HUIKit",
@@ -21,7 +21,11 @@ let package = Package(
             name: "HUIKit",
             dependencies: [
                 .product(name: "Collections", package: "swift-collections"),
-            ]),
+            ],
+            resources: [
+                .copy("Resources")
+            ]
+        ),
         .testTarget(
             name: "HUIKitTests",
             dependencies: ["HUIKit"]),
