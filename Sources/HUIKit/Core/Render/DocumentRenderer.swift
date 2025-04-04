@@ -17,13 +17,13 @@ public struct DocumentRenderer {
         self.newline = minify ? "" : "\n"
     }
 
-    public func render(_ document: Document) -> String {
+    public func render(_ document: Document2) -> String {
         renderDocumentType(document.type) + render(tag: document.root)
     }
     
     // MARK: - private render methods
 
-    private func renderDocumentType(_ type: Document.`Type`) -> String {
+    private func renderDocumentType(_ type: Document2.`Type`) -> String {
         switch type {
         case .unspecified:
             return ""

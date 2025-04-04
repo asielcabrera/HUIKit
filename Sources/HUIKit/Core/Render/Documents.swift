@@ -5,7 +5,7 @@
 //  Created by Asiel Cabrera Gonzalez on 1/31/22.
 //
 
-public struct Document {
+public struct Document2 {
 
     public enum `Type` {
         case unspecified
